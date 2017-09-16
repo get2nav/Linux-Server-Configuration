@@ -1,6 +1,3 @@
-# Linux-Server-Configuration
-# Linux-Server-Configuration
-
 IP: 54.91.64.48
 SSH Port: 2200
 Complete URL: http://54.91.64.48/
