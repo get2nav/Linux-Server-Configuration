@@ -259,20 +259,35 @@ sudo nano /etc/apache2/sites-available/FlaskApp.conf
 Add the following content. Make sure change the ServerName to your domain name:
 
 <VirtualHost*:80>
+
         ServerName 54.91.64.48
+        
         WSGIScriptAlias / /var/www/Flask/flaskapp.wsgi
+        
         <Directory /var/www/Flask/Flask/>
+        
             Order allow,deny
+            
             Allow from all
+            
         </Directory>
+        
         Alias /static /var/www/Flask/Flask/static
+        
         <Directory /var/www/Flask/Flask/static/>
+        
             Order allow,deny
+            
             Allow from all
+            
         </Directory>
+        
         ErrorLog /var/www/Flask/error.log
+        
         LogLevel warn
+        
         CustomLog /var/www/Flask/access.log combined
+        
 </VirtualHost>
 
 Save and close the file.
@@ -288,22 +303,30 @@ sudo nano /var/www/Flask/flaskapp.wsgi
 Add the following content:
 
 #!/usr/bin/python
+
 import sys
+
 import logging
+
 logging.basicConfig(stream=sys.stderr)
+
 sys.path.insert(0,"/var/www/Flask/")
 
 from Flask import app as application
+
 application.secret_key = 'super_secret_key'
 
+
+
 Save the file and restart Apache to apply the changes
+
 $ sudo apachectl restart
 
 To test your Flask App, open your favorite web browser and type the URL http://54.91.64.48/
 
 Alternatively, you could use the following curl command in your terminal:
 
-curl 54.91.64.48
+curl http://54.91.64.48
 
 
 
