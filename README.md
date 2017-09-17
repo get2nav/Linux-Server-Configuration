@@ -53,11 +53,9 @@ $ sudo ufw enable
 
 In lightsail account in networking table del 80/SSH Port and add 2200/tcp and 123/tcp
 
-account will then get disconnected  
+Account will then get disconnected, then login using
 
-then login using
-
-ssh ubuntu@54.91.64.48 -p 2200 -i LightsailDefaultPrivateKey-us-east-1.pem
+$ ssh ubuntu@54.91.64.48 -p 2200 -i LightsailDefaultPrivateKey-us-east-1.pem
 
 
 
@@ -165,8 +163,7 @@ I
 
 Deploy using these deatils
 
-
-sudo apt-get install libapache2-mod-wsgi python-dev
+$ sudo apt-get install libapache2-mod-wsgi python-dev
 Next, you will need to enable mod_wsgi Apache module. To do so, run the following command:
 
 sudo a2enmod wsgi
